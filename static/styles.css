@@ -1,0 +1,71 @@
+/* Estilos para el header */
+.header {
+    background-color: #007bff; /* color de fondo azul */
+    color: white; /* texto blanco */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para el contenedor */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos para el navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-item {
+    margin-right: 15px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: white; /* mismo color de texto que el header */
+    font-weight: bold;
+}
+
+.nav-item a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el contenido principal */
+.main-content {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Estilos para las listas de items */
+.list-group-item {
+    padding: 8px 15px; /* Ajusta el espacio de relleno para hacer los elementos más compactos */
+    margin-bottom: 5px; /* Reduce el margen inferior entre los elementos de la lista */
+    border-radius: 4px; /* Ajusta la curvatura de los bordes */
+    border: 1px solid #e0e0e0; /* Añade un borde más sutil */
+    display: flex; /* Utiliza flexbox para alinear los elementos en la misma línea */
+    justify-content: space-between; /* Alinea el contenido principal y los botones */
+    align-items: center; /* Alinea verticalmente los elementos en el centro */
+    gap: 10px; /* Espacio entre el texto y los botones de acción */
+}
+
+/* Estilos para los botones */
+.btn {
+    padding: 5px 10px; /* Ajusta el espacio dentro de los botones */
+    font-size: 14px; /* Ajusta el tamaño de fuente */
+    margin-left: 5px; /* Añade un pequeño margen entre los botones */
+}
+
+/* Ajustes adicionales para el contenedor principal */
+.card-body {
+    padding: 15px; /* Ajusta el relleno dentro del contenedor principal de la tarjeta */
+}

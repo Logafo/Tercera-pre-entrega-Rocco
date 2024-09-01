@@ -1,0 +1,40 @@
+{% extends 'biblioteca/base.html' %}
+
+{% block title %}Lista de Libros{% endblock %}
+
+{% block content %}
+<div class="card mt-4">
+    <!-- Encabezado de la tarjeta con título y botón para crear un libro -->
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h2>Lista de Libros</h2>
+        <!-- Botón para crear un nuevo libro -->
+        <a href="{% url 'crear_libro' %}" class="btn btn-primary">Crear Libro</a>
+    </div>
+    
+    <!-- Cuerpo de la tarjeta donde se muestra la lista de libros -->
+    <div class="card-body">
+        {% if libros %}
+            <!-- Lista de libros -->
+            <ul class="list-group">
+            {% for libro in libros %}
+                <!-- Elemento de la lista para cada libro -->
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <!-- Muestra el título del libro, autor y fecha de publicación -->
+                    <div>
+                        <strong>{{ libro.titulo }}</strong> - {{ libro.autor.nombre }} ({{ libro.fecha_publicacion|date:"d/m/Y" }})
+                    </div>
+                    <!-- Botones para editar o eliminar el libro -->
+                    <div>
+                        <a href="{% url 'editar_libro' libro.id %}" class="btn btn-sm btn-warning">Editar</a>
+                        <a href="{% url 'eliminar_libro' libro.id %}" class="btn btn-sm btn-danger">Eliminar</a>
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <!-- Mensaje si no hay libros disponibles -->
+            <p class="text-dark">No hay libros disponibles.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

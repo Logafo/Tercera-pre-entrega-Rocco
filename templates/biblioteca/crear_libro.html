@@ -1,0 +1,19 @@
+{% extends 'biblioteca/base.html' %}
+
+{% block title %}Crear Libro{% endblock %}
+
+{% block content %}
+<div class="card mt-4">
+    <div class="card-header">
+        <h2>Crear un Nuevo Libro</h2>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Guardar</button> <!-- Botón verde de Bootstrap -->
+        </form>
+    </div>
+</div>
+<a href="{% url 'lista_libros' %}" class="btn btn-secondary mt-3">Volver a la lista de libros</a> <!-- Botón gris para regresar -->
+{% endblock %}

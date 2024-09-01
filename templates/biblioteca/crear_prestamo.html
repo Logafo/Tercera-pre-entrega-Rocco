@@ -1,0 +1,13 @@
+{% extends 'biblioteca/base.html' %} <!-- Reutiliza el diseño de la plantilla base para que todo se vea igual -->
+
+{% block title %}Registrar Préstamo{% endblock %} <!-- Título que se verá en la pestaña del navegador -->
+
+{% block content %}
+<h2>Registrar un Nuevo Préstamo</h2> <!-- Encabezado para saber qué acción se está realizando -->
+<form method="post"> <!-- Formulario para crear un préstamo, usa POST para enviar los datos -->
+    {% csrf_token %} <!-- Protección contra ataques, siempre con formularios POST -->
+    {{ form.as_p }} <!-- Muestra el formulario ya formateado -->
+    <button type="submit">Guardar</button> <!-- Botón para enviar la información -->
+</form>
+<a href="{% url 'lista_libros' %}">Volver a la lista de libros</a> <!-- Link para regresar a la lista de libros -->
+{% endblock %}

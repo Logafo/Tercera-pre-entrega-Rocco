@@ -1,0 +1,40 @@
+# Ignorar todas las carpetas __pycache__ y archivos compilados
+__pycache__/
+*.py[cod]
+
+# Ignorar archivos de entorno virtual
+/venv/
+/env/
+/.virtualenv/
+*.env
+*.venv
+
+# Ignorar configuraciones del IDE/editor de texto
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignorar archivos de log y temporales
+*.log
+*.pot
+*.py[co]
+*.swp
+*~
+
+# Ignorar archivos de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos comprimidos o empaquetados
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.bak
+*.backup
+*.tmp
+*.old
+
+# Ignorar archivos específicos de Django
+local_settings.py

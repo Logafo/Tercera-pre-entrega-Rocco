@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}LibroManía{% endblock %}</title>
+    
+    <!-- Referencia al favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+
+    <!-- CSS de Bootstrap para estilos -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <!-- Encabezado con logo y nombre centrados -->
+    <header class="bg-primary text-white py-3">
+        <div class="container d-flex justify-content-center align-items-center">
+            <!-- Logo a la izquierda -->
+            <img src="{% static 'input.png' %}" alt="Logo de LibroManía" class="mr-3" style="height: 50px;">
+            <h1 class="mb-0">LibroManía</h1>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="collapse navbar-collapse justify-content-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'inicio' %}">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'lista_libros' %}">Libros</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'lista_autores' %}">Autores</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'lista_categorias' %}">Categorías</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'lista_prestamos' %}">Préstamos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-4">
+        {% block content %}
+        {% endblock %}
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

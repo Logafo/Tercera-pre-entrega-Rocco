@@ -1,0 +1,13 @@
+{% extends 'biblioteca/base.html' %} <!-- Usamos la plantilla base para mantener el mismo estilo -->
+
+{% block title %}Crear Autor{% endblock %} <!-- Título de la página específico -->
+
+{% block content %}
+<h2>Crear un Nuevo Autor</h2>
+<form method="post"> <!-- Formulario para añadir un autor, usa POST porque estamos enviando datos -->
+    {% csrf_token %} <!-- Protección contra ataques CSRF, siempre necesario con formularios POST -->
+    {{ form.as_p }} <!-- Muestra el formulario completo de autor, Django ya lo formatea bonito -->
+    <button type="submit">Guardar</button> <!-- Botón para enviar el formulario -->
+</form>
+<a href="{% url 'lista_libros' %}">Volver a la lista de libros</a> <!-- Link para regresar a la página de libros -->
+{% endblock %}

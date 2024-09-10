@@ -23,10 +23,10 @@ DATE_INPUT_FORMATS = ['%d/%m/%Y']  # Definir formato de entrada de fecha: dd/mm/
 SECRET_KEY = 'django-insecure--!@$m0iwk2s_co9kqg&c)xihc54f)p(dhshhu!sbyt!ogq028*'
 
 # Depuración (True para desarrollo, False para producción)
-DEBUG = True
+DEBUG = False
 
 # Hosts permitidos (vacío para desarrollo local)
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tercera-pre-entrega-rocco-production.up.railway.app']
 
 # Aplicaciones instaladas
 INSTALLED_APPS = [

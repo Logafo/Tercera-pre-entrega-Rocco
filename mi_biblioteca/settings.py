@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Definición del directorio base del proyecto
@@ -104,9 +104,10 @@ USE_I18N = True
 USE_L10N = True  # Activar la localización para formatear números y fechas
 USE_TZ = True
 
-# Archivos estáticos (CSS, JavaScript, Imágenes)
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_URL = '/static/'
+
+# Directorio donde se recopilarán todos los archivos estáticos para producción
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Tipo de campo de clave primaria predeterminado
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
